@@ -18,6 +18,7 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
+			'click .priority-btn': 'priority',
 			'click .edit-btn': 'edit',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
@@ -75,6 +76,11 @@ var app = app || {};
 		edit: function () {
 			this.$el.addClass('editing');
 			this.$input.focus();
+		},
+
+		// Mark the item as priority
+		priority: function () {
+			this.$el.addClass('priority');
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.
